@@ -1,0 +1,229 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.get-in-touch {
+    background-color: #0044cc;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 20%, 100% 100%, 20% 100%);
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.get-in-touch__content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.get-in-touch h2 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    animation: fadeInDown 1s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.get-in-touch h2::after {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.get-in-touch p {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    animation: fadeInLeft 1s ease;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.get-in-touch p::before {
+    content: open-quote;
+    font-size: 3em;
+    color: #ff0000;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    opacity: 0.7;
+}
+
+.get-in-touch button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    animation: fadeInUp 1s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.get-in-touch button:hover {
+    background-color: #ffffff;
+    color: #0044cc;
+    transform: scale(1.1);
+}
+
+.get-in-touch::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: rotateBg 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateBg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional media queries for responsiveness */
+@media (max-width: 1200px) {
+    .get-in-touch h2 {
+        font-size: 1.8em;
+    }
+
+    .get-in-touch p {
+        font-size: 1.2em;
+    }
+
+    .get-in-touch button {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 992px) {
+    .get-in-touch {
+        clip-path: polygon(0 0, 100% 15%, 100% 95%, 0% 100%);
+    }
+
+    .get-in-touch h2 {
+        font-size: 1.7em;
+    }
+
+    .get-in-touch p {
+        font-size: 1.1em;
+    }
+
+    .get-in-touch button {
+        padding: 13px 26px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .get-in-touch {
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+    }
+
+    .get-in-touch h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    .get-in-touch p {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    .get-in-touch button {
+        padding: 12px 24px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    .get-in-touch h2 {
+        font-size: 1.5em;
+    }
+
+    .get-in-touch p {
+        font-size: 0.9em;
+    }
+
+    .get-in-touch button {
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 400px) {
+    .get-in-touch h2 {
+        font-size: 1.4em;
+    }
+
+    .get-in-touch p {
+        font-size: 0.8em;
+    }
+
+    .get-in-touch button {
+        padding: 8px 16px;
+        font-size: 0.7em;
+    }
+}

@@ -1,0 +1,219 @@
+.contact-form-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-left,
+.contact-form-right {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-left:hover,
+.contact-form-right:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-left h2,
+.contact-form-right h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    text-align: center;
+}
+
+.contact-form-left h2::after,
+.contact-form-right h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #d9534f;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-form-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-form-info-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.contact-form-info-item i {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: #0056b3;
+}
+
+.contact-form-instruction {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.contact-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-group input:focus {
+    border-color: #d9534f;
+    box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+}
+
+.contact-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+    height: 150px;
+    resize: vertical;
+    font-size: 1em;
+    min-height: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.contact-form-group textarea:focus {
+    border-color: #d9534f;
+    box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+}
+
+.contact-form-recaptcha-container {
+    margin-bottom: 20px;
+}
+
+.contact-form-right .contact-form-map iframe {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-form-location i {
+    font-size: 1.4em;
+    margin-right: 10px;
+    color: #0056b3;
+}
+
+.contact-form-location p {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+.contact-form-left button {
+    padding: 15px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.contact-form-left button:hover {
+    background-color: #c9302c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-form-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form-left,
+    .contact-form-right {
+        margin: 20px 0;
+    }
+
+    .contact-form-left h2,
+    .contact-form-right h2 {
+        font-size: 1.4em;
+    }
+
+    .contact-form-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form-info-item {
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+
+    .contact-form-group input,
+    .contact-form-group textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .contact-form-left h2,
+    .contact-form-right h2 {
+        font-size: 2em;
+    }
+
+    .contact-form-left button {
+        font-size: 1.1em;
+    }
+}

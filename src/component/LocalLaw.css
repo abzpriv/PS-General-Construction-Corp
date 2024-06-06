@@ -1,0 +1,429 @@
+/* Global styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent text selection and copying for the entire page */
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* Disable callout, image save panel, etc. */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+    touch-action: manipulation;
+    /* Allow scrolling, clicking, etc. */
+}
+
+/* Ensure buttons are clickable but their content is not selectable */
+button,
+a,
+input,
+textarea,
+img,
+.logo {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+}
+
+/* Additional rule for clickable areas if needed */
+button,
+a,
+.logo {
+    pointer-events: auto;
+    /* Ensure these elements can be interacted with */
+}
+
+/* Container styling */
+.local-law-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+/* Background styling */
+.local-law-background {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: height 0.3s ease-in-out;
+}
+
+.local-law-background::before {
+    content: "";
+    background-image: url('.//Pictures/Buildingfacdeimage1.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px);
+    /* Adding blur to the background */
+    z-index: -1;
+}
+
+/* Content styling */
+.local-law-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    /* Ensures the content is above the blurred background */
+}
+
+.local-law-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.local-law-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    /* Enhanced text shadow */
+}
+
+/* Info section styling */
+.local-law-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards 0.3s;
+}
+
+.local-law-info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.local-law-info-text {
+    max-width: 600px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.local-law-info-text h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.local-law-info-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+.local-law-info-image {
+    width: 100%;
+    max-width: 600px;
+}
+
+.local-law-info-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.local-law-info-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Blue section styling */
+.local-law-blue-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: #0056b3;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards 0.5s;
+}
+
+.local-law-blue-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.local-law-blue-text {
+    max-width: 600px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.local-law-blue-text h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.local-law-blue-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.local-law-blue-image {
+    width: 100%;
+    max-width: 600px;
+}
+
+.local-law-blue-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.local-law-blue-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design for tablets and larger screens */
+@media (min-width: 600px) {
+    .local-law-background {
+        height: 70vh;
+    }
+
+    .local-law-content h1 {
+        font-size: 2em;
+    }
+
+    .local-law-info-section,
+    .local-law-blue-section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+        .local-law-info-text h2,
+        .local-law-blue-text h2 {
+            font-size: 1.3em;
+        }
+
+    .local-law-info-text,
+    .local-law-blue-text {
+        max-width: 50%;
+        margin-right: 20px;
+    }
+
+    .local-law-info-image,
+    .local-law-blue-image {
+        max-width: 45%;
+    }
+}
+
+/* Responsive design for larger tablets and desktops */
+@media (min-width: 768px) {
+    .local-law-background {
+        height: 80vh;
+    }
+
+    .local-law-content h1 {
+        font-size: 2em;
+    }
+
+    .local-law-info-text h2,
+    .local-law-blue-text h2 {
+        font-size: 1.3em;
+    }
+
+    .local-law-info-text p,
+    .local-law-blue-text p {
+        font-size: 0.8em;
+    }
+}
+
+/* Responsive design for desktops */
+@media (min-width: 1024px) {
+    .local-law-background {
+        height: 90vh;
+    }
+
+    .local-law-content h1 {
+        font-size: 1.9em;
+    }
+
+    .local-law-info-text h2,
+    .local-law-blue-text h2 {
+        font-size: 1.5em;
+    }
+
+    .local-law-info-text p,
+    .local-law-blue-text p {
+        font-size: 1em;
+    }
+}
+/* Section styling */
+.hiresection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #6B73FF, #000DFF);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.hiresection-content {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.7s ease-in-out;
+}
+
+.hiresection-content h2 {
+    font-size: 1.8em;
+    /* Smaller font size */
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hiresection-content p {
+    font-size: 0.9em;
+    /* Smaller font size */
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    color: #eee;
+}
+
+.hiresection-quote {
+    border-left: 4px solid #00C6FF;
+    padding-left: 10px;
+    margin-top: 20px;
+    animation: fadeInUp 0.7s ease-in-out;
+}
+
+.hiresection-quote p {
+    font-size: 0.9em;
+    /* Smaller font size */
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    color: #eee;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for tablets and larger screens */
+@media (min-width: 600px) {
+    .hiresection-content h2 {
+        font-size: 1.6em;
+        /* Adjusted font size */
+    }
+
+    .hiresection-content p,
+    .hiresection-quote p {
+        font-size: 0.9em;
+        /* Adjusted font size */
+    }
+}
+
+/* Responsive design for larger tablets and desktops */
+@media (min-width: 768px) {
+    .hiresection-content h2 {
+        font-size: 1.7em;
+        /* Adjusted font size */
+    }
+
+    .hiresection-content p,
+    .hiresection-quote p {
+        font-size: 0.9em;
+        /* Adjusted font size */
+    }
+}
+
+/* Responsive design for desktops */
+@media (min-width: 1024px) {
+    .hiresection-content h2 {
+        font-size: 1.9em;
+        /* Adjusted font size */
+    }
+
+    .hiresection-content p,
+    .hiresection-quote p {
+        font-size: 1.1em;
+        /* Adjusted font size */
+    }
+}

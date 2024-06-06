@@ -1,0 +1,328 @@
+/* Prevent text selection and copying for the entire page */
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* Disable callout, image save panel, etc. */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+    touch-action: manipulation;
+    /* Allow scrolling, clicking, etc. */
+}
+
+/* Ensure buttons are clickable but their content is not selectable */
+button,
+a,
+input,
+textarea,
+img,
+.logo {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+}
+
+/* Additional rule for clickable areas if needed */
+button,
+a,
+.logo {
+    pointer-events: auto;
+    /* Ensure these elements can be interacted with */
+}
+
+
+.side-walk-repair-services {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./Pictures/Side-Walk-Image1.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.side-walk-repair-services__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    backdrop-filter: blur(3px);
+    animation: overlayFadeIn 1s ease-in-out;
+}
+
+.side-walk-repair-services__title-container {
+    background: linear-gradient(90deg, #017ec7, #e52e71);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.side-walk-repair-services__title {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #017ec7, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: titleFadeIn 1.5s ease-in-out;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.side-walk-repair-services__title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #017ec7, #e52e71);
+    border-radius: 2px;
+    animation: underlineSlideIn 1.5s ease-in-out;
+}
+
+.side-walk-repair-services__subtitle {
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #f0f0f0;
+    max-width: 800px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    animation: subtitleFadeIn 2s ease-in-out;
+    letter-spacing: 1px;
+}
+.sidewalk-repair-new-section {
+    padding: 40px 20px;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sidewalk-repair-new-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.sidewalk-repair-new-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sidewalk-repair-new-image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidewalk-repair-new-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.sidewalk-repair-new-image:hover {
+    transform: scale(1.05);
+}
+
+.sidewalk-repair-new-text-container {
+    padding: 20px 30px;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.sidewalk-repair-new-text-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #004080;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.sidewalk-repair-new-text-container p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.sidewalk-repair-new-quote {
+    border-left: 4px solid #004080;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    background: #e6f0ff;
+    border-radius: 5px;
+    padding: 10px;
+    animation: fadeInUp 1.3s ease-in-out;
+}
+
+.sidewalk-repair-new-quote p {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #333;
+}
+
+.sidewalk-repair-new-button {
+    padding: 10px 20px;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+    animation: fadeInUp 1.4s ease-in-out;
+}
+
+.sidewalk-repair-new-button:hover {
+    background-color: #003366;
+    transform: translateY(-3px);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidewalk-repair-new-text-container {
+        padding: 10px 20px;
+    }
+
+    .sidewalk-repair-new-text-container h1 {
+        font-size: 1.2em;
+    }
+
+    .sidewalk-repair-new-text-container p,
+    .sidewalk-repair-new-quote p {
+        font-size: 0.8em;
+    }
+
+    .sidewalk-repair-new-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .sidewalk-repair-new-image {
+        width: 90%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidewalk-repair-new-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sidewalk-repair-new-text-container {
+        padding: 15px 25px;
+        width: 10%;
+    }
+
+    .sidewalk-repair-new-text-container h1 {
+        font-size: 1.3em;
+    }
+
+    .sidewalk-repair-new-text-container p,
+    .sidewalk-repair-new-quote p {
+        font-size: 0.8em;
+    }
+
+    .sidewalk-repair-new-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .sidewalk-repair-new-image {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .sidewalk-repair-new-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sidewalk-repair-new-text-container {
+        padding: 20px 30px;
+        width: 50%;
+    }
+
+    .sidewalk-repair-new-text-container h1 {
+        font-size: 1.5em;
+    }
+
+    .sidewalk-repair-new-text-container p,
+    .sidewalk-repair-new-quote p {
+        font-size: 0.9em;
+    }
+
+    .sidewalk-repair-new-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .sidewalk-repair-new-image {
+        width: 60%;
+    }
+}

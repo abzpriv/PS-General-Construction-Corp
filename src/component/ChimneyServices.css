@@ -1,0 +1,472 @@
+/* About Us Section */
+
+
+/* Prevent text selection and copying for the entire page */
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* Disable callout, image save panel, etc. */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+    touch-action: manipulation;
+    /* Allow scrolling, clicking, etc. */
+}
+
+/* Ensure buttons are clickable but their content is not selectable */
+button,
+a,
+input,
+textarea,
+img,
+.logo {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+}
+
+/* Additional rule for clickable areas if needed */
+button,
+a,
+.logo {
+    pointer-events: auto;
+    /* Ensure these elements can be interacted with */
+}
+
+.Chimney-services {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./Pictures/Image1Chimney.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+.Chimney-services__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    backdrop-filter: blur(8px);
+    animation: overlayFadeIn 1s ease-in-out;
+}
+
+.Chimney-services__title-container {
+    background: linear-gradient(90deg, #017ec7, #e52e71);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.Chimney-services__title {
+    font-size: 1.9em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #5bbcf5, #e00c5a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: titleFadeIn 1.5s ease-in-out;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.Chimney-services__title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #017ec7, #e52e71);
+    border-radius: 2px;
+    animation: underlineSlideIn 1.5s ease-in-out;
+}
+
+.Chimney-services__subtitle {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #f0f0f0;
+    max-width: 800px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    animation: subtitleFadeIn 2s ease-in-out;
+    letter-spacing: 1px;
+}
+/* Container styling */
+.Chimney-services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f5);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 20px 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.Chimney-services-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container styling */
+.Chimney-services-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.Chimney-services-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.Chimney-services-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Text container styling */
+.Chimney-services-text-container {
+    max-width: 750px;
+    text-align: center;
+    padding: 20px 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.Chimney-services-text-container:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Text styling */
+.Chimney-services-text-container h1 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.Chimney-services-text-container p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Responsive design for tablets */
+@media (min-width: 600px) {
+    .Chimney-services-container {
+        padding: 30px 20px;
+        margin: 30px 20px;
+    }
+
+    .Chimney-services-image-container {
+        max-width: 400px;
+        margin-bottom: 30px;
+        margin-left: 90px;
+    }
+
+    .Chimney-services-text-container {
+        padding: 30px 20px;
+    }
+
+    .Chimney-services-text-container h1 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .Chimney-services-text-container p {
+        font-size: 0.8em;
+        margin-bottom: 15px;
+    }
+}
+
+/* Responsive design for larger tablets and desktops */
+@media (min-width: 768px) {
+    .Chimney-services-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px 30px;
+        margin: 40px 30px;
+    }
+
+    .Chimney-services-image-container,
+    .Chimney-services-text-container {
+        width: 48%;
+    }
+
+    .Chimney-services-text-container {
+        text-align: left;
+    }
+
+    .Chimney-services-text-container h1 {
+        font-size: 1.4em;
+    }
+
+    .Chimney-services-text-container p {
+        font-size: 0.7em;
+    }
+}
+
+/* Responsive design for desktops */
+@media (min-width: 1024px) {
+    .Chimney-services-text-container h1 {
+        font-size: 1.6em;
+    }
+
+    .Chimney-services-text-container p {
+        font-size: 1em;
+    }
+}
+/* Section styling */
+.Chimney-services-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.Chimney-services-section:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Images container styling */
+.images-container-Chimney-services {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.Chimney-services-image{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.Chimney-services-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Text container styling */
+.text-container-Chimney-services{
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.text-container-Chimney-services:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.text-container-Chimney-services h1{
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.blue-bg h1 {
+    color: #34495e;
+}
+
+.text-container-Chimney-services h2{
+    font-size: 1.5em;
+    margin-top: 15px;
+    color: #34495e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.text-container-Chimney-services p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #7f8c8d;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.blue-bg p {
+    color: #34495e;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 599px) {
+
+    .Chimney-services-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .images-container-Chimney-services {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Chimney-services-image {
+        max-width: 90%;
+        border-radius: 15px;
+    }
+
+    .text-container-Chimney-services {
+        max-width: 100%;
+        text-align: left;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .text-container-Chimney-services h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .text-container-Chimney-services h2 {
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+
+    .text-container-Chimney-services p{
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive design for tablets */
+@media (min-width: 600px) {
+
+    .Chimney-services-section{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 20px;
+        margin: 30px 20px;
+    }
+
+    .images-container-Chimney-services {
+        max-width: 48%;
+        margin-bottom: 0;
+    }
+
+    .text-container-Chimney-services {
+        max-width: 48%;
+        text-align: left;
+        padding: 40px;
+    }
+
+    .text-container-Chimney-services h1{
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .text-container-Chimney-services h2{
+        font-size: 1em;
+        margin-top: 15px;
+    }
+
+    .text-container-Chimney-services p {
+        font-size: 0.8em;
+        margin-bottom: 15px;
+    }
+}
+
+/* Responsive design for larger tablets and desktops */
+@media (min-width: 768px) {
+
+    .Chimney-services-image {
+        max-width: 450px;
+    }
+
+    .text-container-Chimney-services h1 {
+        font-size: 2em;
+    }
+
+    .text-container-Chimney-services h2{
+        font-size: 1.6em;
+    }
+
+    .text-container-Chimney-services p{
+        font-size: 1.2em;
+    }
+}
+
+/* Responsive design for desktops */
+@media (min-width: 1024px) {
+
+    .Chimney-services-image {
+        max-width: 500px;
+    }
+
+    .text-container-Chimney-services h1 {
+        font-size: 2em;
+    }
+
+    .text-container-Chimney-services h2 {
+        font-size: 1.3em;
+    }
+
+    .text-container-Chimney-services p {
+        font-size: 1em;
+    }
+}

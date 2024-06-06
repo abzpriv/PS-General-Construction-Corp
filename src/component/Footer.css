@@ -1,0 +1,332 @@
+/* Footer.css */
+/* Prevent text selection and copying for the entire page */
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* Disable callout, image save panel, etc. */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+    touch-action: manipulation;
+    /* Allow scrolling, clicking, etc. */
+}
+
+/* Ensure buttons are clickable but their content is not selectable */
+button,
+a,
+input,
+textarea,
+img,
+.logo {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+}
+
+/* Additional rule for clickable areas if needed */
+button,
+a,
+.logo {
+    pointer-events: auto;
+    /* Ensure these elements can be interacted with */
+}
+
+.footer {
+    background: linear-gradient(135deg, #1b1b1b 30%, #333 100%);
+    color: #fff;
+    padding: 50px 20px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer__about,
+.footer__links,
+.footer__contact,
+.footer__hours {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+}
+
+.footer__logo {
+    height: auto;
+    width: 110%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer__links h3,
+.footer__contact h3,
+.footer__hours h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer__links h3::after,
+.footer__contact h3::after,
+.footer__hours h3::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+.footer__links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__links li {
+    margin-bottom: 10px;
+}
+
+.footer__links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.footer__links a.active {
+    color: #ff0000;
+}
+
+.footer__links a:hover {
+    color: #ff0000;
+    transform: scale(1.05);
+}
+
+.footer__links i {
+    margin-right: 8px;
+    color: #888;
+}
+
+.footer__contact p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.footer__contact a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer__social a {
+    margin-right: 10px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon {
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon.facebook:hover {
+    color: #ff0000;
+    transform: scale(1.2);
+}
+
+.social-icon.instagram:hover {
+    color: #ff0000;
+    transform: scale(1.2);
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+    .footer__container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .footer__about,
+    .footer__links,
+    .footer__contact,
+    .footer__hours {
+        margin: 20px 0;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .footer__logo {
+        max-width: 260px;
+    }
+
+    .footer__links h3,
+    .footer__contact h3,
+    .footer__hours h3 {
+        font-size: 1.2em;
+    }
+
+    .footer__links a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__about,
+    .footer__links,
+    .footer__contact,
+    .footer__hours {
+        margin: 20px 0;
+    }
+
+    .footer__logo {
+        margin: 0 auto 20px;
+        max-width: 250px;
+    }
+
+    .footer__links ul {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .footer__links h3,
+    .footer__contact h3,
+    .footer__hours h3 {
+        font-size: 1.1em;
+    }
+
+    .footer__links a {
+        font-size: 0.9em;
+    }
+
+    .footer__contact p {
+        font-size: 0.9em;
+    }
+
+    .footer__bottom {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer__logo {
+        max-width: 220px;
+    }
+
+    .footer__links h3,
+    .footer__contact h3,
+    .footer__hours h3 {
+        font-size: 1em;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .footer__links h3::after,
+    .footer__contact h3::after,
+    .footer__hours h3::after {
+        content: '';
+        width: 50px;
+        height: 3px;
+        background-color: #ff0000;
+        position: absolute;
+        bottom: -5px;
+        left: 10px;
+        border-radius: 3px;
+    }
+
+    .footer__links a {
+        font-size: 0.85em;
+    }
+
+    .footer__contact p {
+        font-size: 0.8em;
+    }
+
+    .footer__bottom {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__logo {
+        max-width: 200px;
+    }
+
+    .footer__links h3,
+    .footer__contact h3,
+    .footer__hours h3 {
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .footer__links h3::after,
+    .footer__contact h3::after,
+    .footer__hours h3::after {
+        content: '';
+        width: 50px;
+        height: 3px;
+        background-color: #ff0000;
+        position: absolute;
+        bottom: -5px;
+        left: 10px;
+        border-radius: 3px;
+    }
+
+    .footer__links a {
+        font-size: 0.8em;
+    }
+
+    .footer__contact p {
+        font-size: 0.75em;
+    }
+
+    .footer__bottom {
+        font-size: 0.7em;
+    }
+}

@@ -1,0 +1,139 @@
+/* General Section Styling */
+.projects-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.projects-section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #ff5733;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Container styling */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0 20px;
+}
+
+/* Image styling */
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.project-image:nth-child(odd) {
+    animation-name: slideInLeft;
+}
+
+.project-image:nth-child(even) {
+    animation-name: slideInRight;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for animations */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive design for tablets */
+@media (min-width: 600px) {
+    .projects-section {
+        padding: 50px 30px;
+    }
+
+    .projects-section h2 {
+        font-size: 2.2em;
+    }
+
+    .project-image {
+        border-radius: 12px;
+    }
+}
+
+/* Responsive design for larger tablets and desktops */
+@media (min-width: 768px) {
+    .projects-section {
+        padding: 60px 40px;
+    }
+
+    .projects-section h2 {
+        font-size: 2.4em;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .project-image {
+        border-radius: 15px;
+    }
+}
+
+/* Responsive design for desktops */
+@media (min-width: 1024px) {
+    .projects-section {
+        padding: 70px 50px;
+    }
+
+    .projects-section h2 {
+        font-size: 2.6em;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .project-image {
+        border-radius: 20px;
+    }
+}

@@ -1,0 +1,272 @@
+/* Global styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+/* Prevent text selection and copying for the entire page */
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* Disable callout, image save panel, etc. */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+    touch-action: manipulation;
+    /* Allow scrolling, clicking, etc. */
+}
+
+/* Ensure buttons are clickable but their content is not selectable */
+button,
+a,
+input,
+textarea,
+img,
+.logo {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+}
+
+/* Additional rule for clickable areas if needed */
+button,
+a,
+.logo {
+    pointer-events: auto;
+    /* Ensure these elements can be interacted with */
+}
+
+
+.stoop-service {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.stoop-service__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.stoop-service__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.stoop-service__image:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.stoop-service__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.stoop-service__content {
+    z-index: 1;
+    max-width: 800px;
+    animation: fadeInUp 1s ease;
+}
+
+.stoop-service__content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ffffff, #355ee1);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: none;
+    filter: url(#gradient-text);
+}
+
+.stoop-service__content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .stoop-service__content h1 {
+        font-size: 1.5em;
+    }
+
+    .stoop-service__content p {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .stoop-service__content h1 {
+        font-size: 2.8em;
+    }
+
+    .stoop-service__content p {
+        font-size: 1.3em;
+    }
+}
+/* Section styling */
+.stoop-repair-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container styling */
+.stoop-repair-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stoop-repair-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container styling */
+.stoop-repair-image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.stoop-repair-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stoop-repair-image-container:hover .stoop-repair-image {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Text container styling */
+.stoop-repair-text-container {
+    padding: 20px 40px;
+    text-align: left;
+}
+
+.stoop-repair-text-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+.stoop-repair-text-container h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.stoop-repair-text-container p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .stoop-repair-text-container h1 {
+        font-size: 1.5em;
+    }
+
+    .stoop-repair-text-container h2 {
+        font-size: 1.2em;
+    }
+
+    .stoop-repair-text-container p {
+        font-size: 0.9em;
+    }
+
+    .stoop-repair-container {
+        flex-direction: column;
+    }
+
+    .stoop-repair-image-container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .stoop-repair-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .stoop-repair-image-container,
+    .stoop-repair-text-container {
+        width: 48%;
+    }
+
+    .stoop-repair-text-container {
+        text-align: left;
+    }
+}

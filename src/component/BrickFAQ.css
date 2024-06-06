@@ -1,0 +1,209 @@
+.brick-faq-section {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+}
+
+.brick-faq-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(90, 9, 9, 0.1);
+    animation: rotateBg 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateBg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.brick-faq-section h2,
+.brick-faq-section h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.brick-faq-section h2 {
+    font-size: 1.5em;
+    color: #0044cc;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out;
+    position: relative;
+}
+
+.brick-faq-section h2::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background-color: #cc0000;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.brick-faq-section h3 {
+    font-size: 1.3em;
+    color: #cc0000;
+    margin-bottom: 30px;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brick-faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.brick-faq-item {
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.brick-faq-question {
+    padding: 15px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    color: #0044cc;
+    background: #f9f9f9;
+}
+
+.brick-faq-question:hover {
+    background: #f1f1f1;
+}
+
+.brick-faq-question.active {
+    color: #cc0000;
+    background: #e9e9e9;
+    transition: color 0.3s ease;
+}
+
+.brick-faq-answer {
+    padding: 0 20px;
+    font-size: 1em;
+    color: #666;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.brick-faq-question.active+.brick-faq-answer {
+    max-height: 500px;
+    padding: 15px 20px;
+}
+
+.brick-faq-icon {
+    font-size: 1em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.brick-faq-icon::before {
+    content: '\25B6';
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.brick-faq-question.active .brick-faq-icon::before {
+    transform: rotate(0deg);
+    color: #cc0000;
+}
+
+.brick-faq-answer-content {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brick-faq-question.active+.brick-faq-answer .brick-faq-answer-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .brick-faq-section h2 {
+        font-size: 1.2em;
+    }
+
+    .brick-faq-section h3 {
+        font-size: 1em;
+    }
+
+    .brick-faq-question {
+        font-size: 0.9em;
+    }
+
+    .brick-faq-answer {
+        font-size: 0.9em;
+    }
+
+    .brick-faq-container {
+        padding: 20px;
+    }
+}

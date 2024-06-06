@@ -1,0 +1,316 @@
+/* Global styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+/* Prevent text selection and copying for the entire page */
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* Disable callout, image save panel, etc. */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+    touch-action: manipulation;
+    /* Allow scrolling, clicking, etc. */
+}
+
+/* Ensure buttons are clickable but their content is not selectable */
+button,
+a,
+input,
+textarea,
+img,
+.logo {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobile browser tap highlight */
+}
+
+/* Additional rule for clickable areas if needed */
+button,
+a,
+.logo {
+    pointer-events: auto;
+    /* Ensure these elements can be interacted with */
+}
+
+
+
+.BrickPointing{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.BrickPointing__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.BrickPointing__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.BrickPointing__image:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.BrickPointing__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.BrickPointing__content {
+    z-index: 1;
+    max-width: 800px;
+    animation: fadeInUp 1s ease;
+}
+
+.BrickPointing__content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ffffff, #355ee1);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: none;
+    filter: url(#gradient-text);
+}
+
+.BrickPointing__content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .BrickPointing__content h1 {
+        font-size: 1.4em;
+    }
+
+    .BrickPointing__content p {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .BrickPointing__content h1 {
+        font-size: 2.8em;
+    }
+
+    .BrickPointing__content p {
+        font-size: 1.3em;
+    }
+}
+
+/* Container styling */
+.BrickPointing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #e3e6e9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 40px 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.BrickPointing-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container styling */
+.BrickPointing-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.BrickPointing-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.BrickPointing-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Text container styling */
+.BrickPointing-text-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.BrickPointing-text-container:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Text styling */
+.BrickPointing-text-container h1 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: #34495e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.BrickPointing-text-container p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Responsive design for tablets */
+@media (min-width: 600px) {
+    .BrickPointing-container {
+        padding: 50px 30px;
+        margin: 50px 30px;
+    }
+
+    .BrickPointing-image-container {
+        max-width: 700px;
+        margin-bottom: 40px;
+    }
+
+    .BrickPointing-text-container {
+        padding: 40px 30px;
+    }
+
+    .BrickPointing-text-container h1 {
+        font-size: 1.1em;
+        margin-bottom: 25px;
+    }
+
+    .BrickPointing-text-container p {
+        font-size: 0.9em;
+        margin-bottom: 25px;
+    }
+}
+
+/* Responsive design for larger tablets and desktops */
+@media (min-width: 768px) {
+    .BrickPointing-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 40px;
+        margin: 60px 40px;
+    }
+
+    .BrickPointing-image-container,
+    .BrickPointing-text-container {
+        width: 48%;
+    }
+
+    .BrickPointing-text-container {
+        text-align: left;
+    }
+
+    .BrickPointing-text-container h1 {
+        font-size: 1.1em;
+    }
+
+    .BrickPointing-text-container p {
+        font-size: 0.9em;
+    }
+}
+
+/* Responsive design for desktops */
+@media (min-width: 1024px) {
+    .BrickPointing-container {
+        padding: 80px 60px;
+        margin: 80px 60px;
+    }
+
+    .BrickPointing-image-container {
+        max-width: 600px;
+    }
+
+    .BrickPointing-text-container h1 {
+        font-size: 1.8em;
+    }
+
+    .BrickPointing-text-container p {
+        font-size: 1.3em;
+    }
+}
